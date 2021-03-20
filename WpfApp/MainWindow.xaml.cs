@@ -1,5 +1,4 @@
 ﻿using SelfHost1.ServiceModel;
-using Pages = SelfHost1.ServiceModel.Types.Page;
 using ServiceStack;
 using System;
 using System.Collections.Generic;
@@ -23,37 +22,18 @@ namespace WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IServiceClient client;
+        private IServiceClient Client { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-
-            client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
-
+            Client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
+            InitialieGrid();
         }
-        private async void GetRequest()
-        {
-            var client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
-
-            await client.SendAsync<CreatePageResponse>( new CreatePage
-            {
-                Url = "www.vk.com",
-                Html = "Html maybe",
-                Title = "Title maybe",
-                Text = "Text maybe",
-                Date = DateTime.Now
-            });
-        }
-
         private async void InitialieGrid()
         {
 
-            var result = await client.SendAsync<GetPagesResponse>(new GetPage());
+            var result = await Client.SendAsync<GetPagesResponse>(new GetPage());
             GridBase.ItemsSource = result.Result;
-        }
-        private void BtnGet_Click(object sender, RoutedEventArgs e)
-        {
-            InitialieGrid();
         }
     }
 }

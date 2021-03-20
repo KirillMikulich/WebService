@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "wR4mPm/m/JyCQqJKlayq8yIEPWu4ioxRwsOt7al+qPKsRz9iL2TX3UFVprqaCQluM/i/GHOM64EbDPkBpfUasw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kirill\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\modernwpfui\\0.9.3\\modernwpfui.0.9.3.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\servicestack.client\\5.10.4\\servicestack.client.5.10.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\servicestack.httpclient\\5.10.4\\servicestack.httpclient.5.10.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\servicestack.interfaces\\5.10.4\\servicestack.interfaces.5.10.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\servicestack.text\\5.10.4\\servicestack.text.5.10.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -4,16 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
-        mc:Ignorable="d"
+        
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name ="GridBase">
-            
-        </DataGrid>
-        <Button x:Name="BtnGet"
-                Click="BtnGet_Click"
-                Height="30px"
-                VerticalAlignment="Bottom"
-                >Get Request</Button>
+       
+        
+        <TextBlock Text="My first ModernWPF app" 
+                    />
+        <Button Content="I am a button" />
+        <DataGrid
+            x:Name="GridBase"
+            ></DataGrid>
+
     </Grid>
 </Window>

@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj",
+        "projectName": "SelfHost1.ServiceModel",
+        "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj"
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj",
+        "projectName": "WpfApp",
+        "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj",
+        "packagesPath": "C:\\Users\\Kirill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Kirill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
+                "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "ModernWpfUI": {
+              "target": "Package",
+              "version": "[0.9.3, )"
+            },
+            "ServiceStack.Client": {
+              "target": "Package",
+              "version": "[5.10.4, )"
+            },
+            "ServiceStack.HttpClient": {
+              "target": "Package",
+              "version": "[5.10.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

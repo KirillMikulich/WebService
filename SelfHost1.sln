@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHost1.ServiceModel", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHost1.ServiceInterface", "SelfHost1\SelfHost1.ServiceInterface\SelfHost1.ServiceInterface.csproj", "{130DED02-5984-487C-93DD-0D264EED140E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{61DC3E15-6C80-424C-9DA6-205F43922329}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{24936F94-0AAB-47CA-B0C8-3AC5C2467581}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{130DED02-5984-487C-93DD-0D264EED140E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130DED02-5984-487C-93DD-0D264EED140E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130DED02-5984-487C-93DD-0D264EED140E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61DC3E15-6C80-424C-9DA6-205F43922329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61DC3E15-6C80-424C-9DA6-205F43922329}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61DC3E15-6C80-424C-9DA6-205F43922329}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61DC3E15-6C80-424C-9DA6-205F43922329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24936F94-0AAB-47CA-B0C8-3AC5C2467581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24936F94-0AAB-47CA-B0C8-3AC5C2467581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24936F94-0AAB-47CA-B0C8-3AC5C2467581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24936F94-0AAB-47CA-B0C8-3AC5C2467581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
