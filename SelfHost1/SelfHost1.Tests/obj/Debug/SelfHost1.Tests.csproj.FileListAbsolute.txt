@@ -28,3 +28,5 @@ C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\obj\Debug\SelfH
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\obj\Debug\SelfHost1.Tests.csproj.CopyComplete
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\obj\Debug\SelfHost1.Tests.dll
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\obj\Debug\SelfHost1.Tests.pdb
+C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\bin\Debug\ServiceStack.OrmLite.dll
+C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.Tests\bin\Debug\ServiceStack.OrmLite.xml

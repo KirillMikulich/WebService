@@ -13,7 +13,7 @@ namespace SelfHost1.Tests
 
         class AppHost : AppSelfHostBase
         {
-            public AppHost() : base(nameof(IntegrationTest), typeof(MyServices).Assembly) { }
+            public AppHost() : base(nameof(IntegrationTest), typeof(PagesService).Assembly) { }
 
             public override void Configure(Container container)
             {
@@ -35,11 +35,7 @@ namespace SelfHost1.Tests
         [Test]
         public void Can_call_Hello_Service()
         {
-            var client = CreateClient();
-
-            var response = client.Get(new Hello { Name = "World" });
-
-            Assert.That(response.Result, Is.EqualTo("Hello, World!"));
+            
         }
     }
 }

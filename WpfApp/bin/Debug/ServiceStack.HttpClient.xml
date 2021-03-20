@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceStack.HttpClient</name>
+    </assembly>
+    <members>
+        <member name="P:ServiceStack.JsonHttpClient.Headers">
+            <summary>
+            Gets the collection of headers to be added to outgoing requests.
+            </summary>
+        </member>
+    </members>
+</doc>
