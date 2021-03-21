@@ -28,12 +28,12 @@ namespace WpfApp
             InitializeComponent();
             Client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
             InitialieGrid();
+            
         }
         private async void InitialieGrid()
         {
 
-            var result = await Client.SendAsync<GetPagesResponse>(new GetPage());
-            GridBase.ItemsSource = result.Result;
+            await Client.SendAsync(new SetUrl());
         }
     }
 }

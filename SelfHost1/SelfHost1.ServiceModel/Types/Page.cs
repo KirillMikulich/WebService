@@ -14,6 +14,6 @@ namespace SelfHost1.ServiceModel.Types
         public string Html { get; set; }
         public string Title { get; set; }
         public string Text{ get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; }//swap to DateTime, in test i use string
     }
 }

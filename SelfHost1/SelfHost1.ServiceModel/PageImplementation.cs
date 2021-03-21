@@ -30,7 +30,6 @@ namespace SelfHost1.ServiceModel
     public class GetPage : IReturn<GetPageResponse>
     {
         public int Id { get; set; }
-
     }
 
     public class GetPageResponse

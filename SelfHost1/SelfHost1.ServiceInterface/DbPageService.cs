@@ -12,12 +12,12 @@ namespace SelfHost1.ServiceInterface
 {
     public class DbPageService: Service
     {
-        public GetPagesResponse Any(GetPage request)
+        public GetPagesResponse Any()
         {
             return new GetPagesResponse { Result = Db.Select<Page>() };
         }
 
-       /* public GetPageResponse Any(GetPage request)
+        public GetPageResponse Any(GetPage request)
         {
             var page = Db.SingleById<Page>(request.Id);
             if (page == null)
@@ -28,7 +28,7 @@ namespace SelfHost1.ServiceInterface
                 Result = Db.SingleById<Page>(request.Id)
             };
         }
-       */
+
         public CreatePageResponse Any(CreatePage request)
         {
             var page = new Page {   Url = request.Url,
