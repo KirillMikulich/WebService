@@ -15,25 +15,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp
+namespace WpfApp.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IServiceClient Client { get; set; }
+        //private IServiceClient Client { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            Client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
-            InitialieGrid();
+            //Client = new CachedHttpClient(new JsonHttpClient("http://localhost:8088"));
+            //InitialieGrid();
             
         }
-        private async void InitialieGrid()
-        {
+        //private async void InitialieGrid()
+        //{
 
-            await Client.SendAsync(new SetUrl());
-        }
+        //    //await Client.SendAsync(new SetUrl());
+        //}
     }
 }

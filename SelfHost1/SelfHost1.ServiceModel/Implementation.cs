@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SelfHost1.ServiceModel
 {
-    public class SetUrl: IReturnVoid
+    public class SetUrl: IReturnVoid//удалить этот ебаный ужас
     {
         public string Url { get; set; }
     }

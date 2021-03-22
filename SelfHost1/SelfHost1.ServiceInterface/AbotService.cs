@@ -81,10 +81,10 @@ namespace SelfHost1.ServiceInterface
                 Title = title,
                 Url = Url,
                 Html = html,
-                Date = DateTime.Now,
+                Date = DateTime.Now,//допилить дату 
                 Text = text
             });
-            var x = 0 ;
+            var x = 0;
         }
     }
 }

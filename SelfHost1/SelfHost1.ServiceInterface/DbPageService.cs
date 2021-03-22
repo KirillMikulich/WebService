@@ -12,7 +12,7 @@ namespace SelfHost1.ServiceInterface
 {
     public class DbPageService: Service
     {
-        public GetPagesResponse Any()
+        public GetPagesResponse Any(GetPages request)
         {
             return new GetPagesResponse { Result = Db.Select<Page>() };
         }
