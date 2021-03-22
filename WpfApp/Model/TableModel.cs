@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ServiceStack;
 using SelfHost1.ServiceModel;
+using SelfHost1.ServiceInterface;
 
 namespace WpfApp.Model
 {
@@ -17,5 +18,9 @@ namespace WpfApp.Model
             return (await ClientManager.Client?.SendAsync(new GetPages())).Result;
         }
 
+        public static async void UpdateArticlesAsync()
+        {
+            await ClientManager.Client?.SendAsync(new SiteCrawl());
+        }
     }
 }

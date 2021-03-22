@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         xmlns:viewmodel ="clr-namespace:WpfApp.ViewModel"
-        Height="450" Width="800">
+        Height="450" Width="800"
+        >
     <Window.DataContext>
         <viewmodel:MainWindowVewModel/>
     </Window.DataContext>
-   
-    <Grid>
+
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -49,7 +50,7 @@
             Background="Transparent"
             IsReadOnly="True"
             Grid.Column="0" Grid.Row="0"
-            Grid.ColumnSpan="5"
+            Grid.ColumnSpan="7"
             Grid.RowSpan="12"
             Margin="0 0 0 10"
             >
@@ -101,7 +102,7 @@
             Height="30px"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
-            Command="{Binding ButtonCommand}"
+            Command="{Binding ButtonLoadTable}"
             Padding="5px"        
             >
             Загрузить Таблицу
@@ -110,12 +111,109 @@
             Padding="5px"
             Grid.Column="2" Grid.Row="13"
             Grid.ColumnSpan="2"
+            Command="{Binding UpdateArticles}"
             Height="30px"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
         >
             Обновить статьи
         </Button>
+
+        <DockPanel Grid.Column="8" Grid.Row="0"
+                   HorizontalAlignment="Right"
+            Grid.ColumnSpan="5" Grid.RowSpan="14">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition Height="40px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition  Height="30px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition  Height="30px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition  Height="30px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition Height="30px"></RowDefinition>
+                    <RowDefinition Height="40px"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60px"></ColumnDefinition>
+                    <ColumnDefinition Width="60px"></ColumnDefinition>
+                    <ColumnDefinition Width="60px"></ColumnDefinition>
+                    <ColumnDefinition Width="60px"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" 
+                       Grid.ColumnSpan="4"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0">Поиск по словам</Label>
+                <TextBox Height="30px" 
+                         Grid.Row="1"
+                         Grid.ColumnSpan="4"
+                         Grid.Column="0"
+                         Margin="0 0 0 0"
+                         ></TextBox>
+                <Button
+                     Grid.Row="2"
+                         Grid.ColumnSpan="2"
+                         Grid.Column="0"
+                         Margin="0 0 0 0"
+                    >Поиск</Button>
+
+
+                <Label Grid.Row="4" 
+                       Grid.ColumnSpan="4"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0">Поиск по сущнгостям</Label>
+                <Label Grid.Row="5" 
+                       Grid.ColumnSpan="4"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0">Люди</Label>
+                <TextBox Height="30px" 
+                         Grid.Row="6"
+                         Grid.ColumnSpan="4"
+                         Grid.Column="0"
+                         Margin="0 0 0 0"
+                         ></TextBox>
+                <Label Grid.Row="7" 
+                       Grid.ColumnSpan="4"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0">Организации</Label>
+                <TextBox Height="30px" 
+                         Grid.Row="8"
+                         Grid.ColumnSpan="4"
+                         Grid.Column="0"
+                         Margin="0 0 0 0"
+                         ></TextBox>
+                <Label Grid.Row="9" 
+                       Grid.ColumnSpan="4"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0">Страны</Label>
+                <TextBox Height="30px" 
+                         Grid.Row="10"
+                         Grid.ColumnSpan="4"
+                         Grid.Column="0"
+                         Margin="0 0 0 0"
+                         ></TextBox>
+                <Button
+                     Grid.Row="12"
+                         Grid.ColumnSpan="2"
+                         Grid.Column="0"
+                         Margin=" 0 5 0 0 "
+                    >Поиск</Button>
+
+            </Grid>
+        </DockPanel>
     </Grid>
 
 </Window>

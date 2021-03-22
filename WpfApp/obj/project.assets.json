@@ -365,6 +365,18 @@
           "lib/net47/System.ValueTuple.dll": {}
         }
       },
+      "SelfHost1.ServiceInterface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "SelfHost1.ServiceModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        }
+      },
       "SelfHost1.ServiceModel/1.0.0": {
         "type": "project",
         "compile": {
@@ -737,6 +749,18 @@
         },
         "runtime": {
           "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "SelfHost1.ServiceInterface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "SelfHost1.ServiceModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
         }
       },
       "SelfHost1.ServiceModel/1.0.0": {
@@ -1113,6 +1137,18 @@
           "lib/net47/System.ValueTuple.dll": {}
         }
       },
+      "SelfHost1.ServiceInterface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "SelfHost1.ServiceModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        }
+      },
       "SelfHost1.ServiceModel/1.0.0": {
         "type": "project",
         "compile": {
@@ -1485,6 +1521,18 @@
         },
         "runtime": {
           "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "SelfHost1.ServiceInterface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "SelfHost1.ServiceModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SelfHost1.ServiceInterface.dll": {}
         }
       },
       "SelfHost1.ServiceModel/1.0.0": {
@@ -2259,6 +2307,11 @@
         "version.txt"
       ]
     },
+    "SelfHost1.ServiceInterface/1.0.0": {
+      "type": "project",
+      "path": "../SelfHost1/SelfHost1.ServiceInterface/SelfHost1.ServiceInterface.csproj",
+      "msbuildProject": "../SelfHost1/SelfHost1.ServiceInterface/SelfHost1.ServiceInterface.csproj"
+    },
     "SelfHost1.ServiceModel/1.0.0": {
       "type": "project",
       "path": "../SelfHost1/SelfHost1.ServiceModel/SelfHost1.ServiceModel.csproj",
@@ -2268,6 +2321,7 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "ModernWpfUI >= 0.9.3",
+      "SelfHost1.ServiceInterface >= 1.0.0",
       "SelfHost1.ServiceModel >= 1.0.0",
       "ServiceStack.Client >= 5.10.4",
       "ServiceStack.HttpClient >= 5.10.4"
@@ -2300,6 +2354,9 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
+            "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj": {
+              "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj"
+            },
             "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
               "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj"
             }

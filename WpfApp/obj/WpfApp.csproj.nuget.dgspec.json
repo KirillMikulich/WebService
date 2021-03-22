@@ -4,6 +4,25 @@
     "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\WpfApp\\WpfApp.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj",
+        "projectName": "SelfHost1.ServiceInterface",
+        "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
+                "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
     "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
       "restore": {
         "projectUniqueName": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj",
@@ -38,6 +57,9 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
+              "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj": {
+                "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceInterface\\SelfHost1.ServiceInterface.csproj"
+              },
               "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj": {
                 "projectPath": "C:\\Users\\Kirill\\source\\repos\\SelfHost1\\SelfHost1\\SelfHost1.ServiceModel\\SelfHost1.ServiceModel.csproj"
               }

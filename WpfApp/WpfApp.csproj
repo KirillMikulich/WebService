@@ -55,10 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\DataGridView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,11 +66,7 @@
     <Compile Include="ClientManager.cs" />
     <Compile Include="Model\TableModel.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="ViewModel\DataGridViewModel.cs" />
     <Compile Include="ViewModel\MainWindowVewModel.cs" />
-    <Compile Include="View\DataGridView.xaml.cs">
-      <DependentUpon>DataGridView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -118,6 +110,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SelfHost1\SelfHost1.ServiceInterface\SelfHost1.ServiceInterface.csproj">
+      <Project>{130DED02-5984-487C-93DD-0D264EED140E}</Project>
+      <Name>SelfHost1.ServiceInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SelfHost1\SelfHost1.ServiceModel\SelfHost1.ServiceModel.csproj">
       <Project>{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}</Project>
       <Name>SelfHost1.ServiceModel</Name>
