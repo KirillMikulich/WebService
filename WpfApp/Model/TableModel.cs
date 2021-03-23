@@ -22,5 +22,10 @@ namespace WpfApp.Model
         {
             await ClientManager.Client?.SendAsync(new SiteCrawl() { BaseUrl = "https://belaruspartisan.by/" });
         }
+
+        public static async void DeleteArticlesAsyncById(int id)
+        {
+            await ClientManager.Client?.SendAsync(new DeletePage() { Id = id});
+        }
     }
 }

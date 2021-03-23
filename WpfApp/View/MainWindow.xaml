@@ -38,31 +38,30 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="50px"></ColumnDefinition>
+            <ColumnDefinition Width="50px"></ColumnDefinition>
+            <ColumnDefinition Width="50px"></ColumnDefinition>
+            <ColumnDefinition Width="50px"></ColumnDefinition>
+            <ColumnDefinition Width="50px"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DataGrid
-            VerticalAlignment="Top"
+            
             ItemsSource="{Binding Path=Pages}"
             AutoGenerateColumns="false"
             Background="Transparent"
             IsReadOnly="True"
             Grid.Column="0" Grid.Row="0"
-            Grid.ColumnSpan="10"
-            Grid.RowSpan="12"
-            Margin="0 0 0 10"
+            Grid.ColumnSpan="9"
+            Grid.RowSpan="13"
+            Margin="0 0 10 10"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
             >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Id}" 
-                                    Header="ID" 
-                                    Visibility="Hidden"/>
+                
                 <DataGridTextColumn Binding="{Binding Path=Url}" 
                                     Header="URL" />
                 <DataGridTextColumn Binding="{Binding Path=Title}" 
-                                    Header="Title" Width="80"  />
+                                    Header="Title"  />
                 <DataGridTextColumn Binding="{Binding Path=Date, 
                                                 StringFormat=\{0:dd.MM.yy\}}" 
                                     Header="Date"   />
@@ -72,25 +71,23 @@
                         <DataTemplate>
                             <Button Content="Delete" 
                                     Padding="5px"
-                                    Command="" />
+                                    Command="{Binding Path=DataContext.DeleteCommand,
+                                    RelativeSource={RelativeSource 
+                                    FindAncestor,
+                                    AncestorType={x:Type DataGrid}}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit"
-                                    Padding="5px"   
-                                    Command="" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Check" 
+                            <Button Content="Show more" 
                                     Padding="5px"  
-                                    Command="" />
+                                    Command="{Binding Path=DataContext.ShowMoreCommand,
+                                    RelativeSource={RelativeSource 
+                                    FindAncestor,
+                                    AncestorType={x:Type DataGrid}}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -106,7 +103,7 @@
             Command="{Binding ButtonLoadTable}"
             Padding="5px"        
             >
-            Загрузить Таблицу
+            Все записи
         </Button>
         <Button
             Padding="5px"
@@ -121,14 +118,13 @@
         </Button>
 
         <DockPanel Grid.Column="9" Grid.Row="0"
-                   HorizontalAlignment="Right"
             Grid.ColumnSpan="5" Grid.RowSpan="14">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30px"></RowDefinition>
                     <RowDefinition Height="40px"></RowDefinition>
                     <RowDefinition Height="30px"></RowDefinition>
-                    <RowDefinition  Height="30px"></RowDefinition>
+                    <RowDefinition  MaxHeight="200px"></RowDefinition>
                     <RowDefinition Height="30px"></RowDefinition>
                     <RowDefinition  Height="30px"></RowDefinition>
                     <RowDefinition Height="30px"></RowDefinition>
@@ -143,15 +139,6 @@
                     <ColumnDefinition Width="60px"></ColumnDefinition>
                     <ColumnDefinition Width="60px"></ColumnDefinition>
                     <ColumnDefinition Width="60px"></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" 

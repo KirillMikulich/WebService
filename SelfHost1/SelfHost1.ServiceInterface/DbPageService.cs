@@ -37,14 +37,14 @@ namespace SelfHost1.ServiceInterface
                                     Text = request.Text,
                                     Date = request.Date
             };
-            Db.Save(page);
+            Db.Insert(page);
             return new CreatePageResponse
             {
                 Result = page
             };
         }
 
-        public UpdateCustomersResponse Any(UpdateCustomers request)
+        public void Any(UpdatePageById request)
         {
             var page = Db.SingleById<Page>(request.Id);
             if (page == null)
@@ -58,10 +58,6 @@ namespace SelfHost1.ServiceInterface
 
             Db.Update(page);
 
-            return new UpdateCustomersResponse
-            {
-                Results = page
-            };
         }
 
         public void Any(DeletePage request)

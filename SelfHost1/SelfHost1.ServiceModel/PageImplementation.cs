@@ -37,7 +37,7 @@ namespace SelfHost1.ServiceModel
         public Page Result { get; set; }
     }
     
-    public class UpdateCustomers : IReturn<UpdateCustomersResponse>
+    public class UpdatePageById : IReturnVoid
     {
         public int Id { get; set; }
         public string Url { get; set; }
@@ -47,10 +47,6 @@ namespace SelfHost1.ServiceModel
         public DateTime Date { get; set; }
     }
 
-    public class UpdateCustomersResponse
-    {
-        public Page Results { get; set; }
-    }
     public class GetPages : IReturn<GetPagesResponse> { }
 
     public class GetPagesResponse

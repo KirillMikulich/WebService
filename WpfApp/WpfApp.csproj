@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\ShowMoreView.xaml.cs">
+      <DependentUpon>ShowMoreView.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,13 +67,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClientManager.cs" />
+    <Compile Include="Model\ShowMoreModel.cs" />
     <Compile Include="Model\TableModel.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\MainWindowVewModel.cs" />
+    <Compile Include="ViewModel\ShowMoreViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ShowMoreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

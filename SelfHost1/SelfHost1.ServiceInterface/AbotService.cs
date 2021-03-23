@@ -20,28 +20,29 @@ namespace SelfHost1.ServiceInterface
     {
         public string BaseUrl { get; set; }
         private List<Page> pages {get;set;}
-        public async void Any(SiteCrawl request)
+        public  void Any(SiteCrawl request)
         {
             BaseUrl = request.BaseUrl;
-            pages = new List<Page>();
-            await StartSiteCrawl();
+            StartSiteCrawl();
         }
 
-        public async Task StartSiteCrawl()
+        public void StartSiteCrawl()
         {
             Log.Logger = new LoggerConfiguration()
                .MinimumLevel.Debug()
                .Enrich.WithThreadId()
                .WriteTo.Console(outputTemplate: Constants.LogFormatTemplate)
                .CreateLogger();
+
+            pages = new List<Page>();
             Log.Information("Start download pages.");
 
-            await DemoSimpleCrawler();
-
+            DemoSimpleCrawler();
+            Db.InsertAll(pages);
             Log.Information("End download pages!");
         }
 
-        private async Task DemoSimpleCrawler()
+        private  void DemoSimpleCrawler()
         {
             var config = new CrawlConfiguration
             {
@@ -52,29 +53,28 @@ namespace SelfHost1.ServiceInterface
             var crawler = new PoliteWebCrawler(config);
 
             crawler.PageCrawlCompleted += Crawler_PageCrawlCompleted;
-
-            await crawler.CrawlAsync(new Uri(BaseUrl));
+            Task.Run<CrawlResult>(async()=>await crawler.CrawlAsync(new Uri(BaseUrl))).Wait();
 
         }
         private void Crawler_PageCrawlCompleted(object sender, PageCrawlCompletedArgs e)
         {
             CrawledPage crawledPage = e.CrawledPage;
-            
             var htmlAgilityPackDocument = crawledPage.AngleSharpHtmlDocument;
             var c = htmlAgilityPackDocument.QuerySelectorAll("div.preview_text a");
+
             foreach (var x in c)
             {
-                DemoSinglePageRequest(BaseUrl + x.GetAttribute("href").Remove(0, 1));
+                 DemoSinglePageRequest(BaseUrl + x.GetAttribute("href").Remove(0, 1));
+                
             }
-            Db.SaveAll(pages);
-
         }
 
-        private async void DemoSinglePageRequest(string Url)
+        private void DemoSinglePageRequest(string Url)
         {
             var pageRequester = new PageRequester(new CrawlConfiguration(), new WebContentExtractor());
 
-            var crawledPage = await pageRequester.MakeRequestAsync(new Uri(Url));
+            Task<CrawledPage> task = Task.Run<CrawledPage>(async()=> await  pageRequester.MakeRequestAsync(new Uri(Url)));
+            var crawledPage = task.Result;
             if (crawledPage != null)
             {
                 string title = crawledPage.AngleSharpHtmlDocument.QuerySelector("h1.name") == null ?
@@ -106,6 +106,7 @@ namespace SelfHost1.ServiceInterface
                         Date = DateTime.Now, // DateTime.Parse(date),
                         Text = string_text
                     });
+                    
                 }
             }
         }

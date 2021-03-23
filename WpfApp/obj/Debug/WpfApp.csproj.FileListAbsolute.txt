@@ -65,3 +65,5 @@ C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\AngleSharp.xml
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\Serilog.Enrichers.Thread.xml
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\Serilog.Sinks.Console.xml
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\ServiceStack.Common.xml
+C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\ShowMoreView.g.cs
+C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\ShowMoreView.baml
