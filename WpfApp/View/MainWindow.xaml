@@ -42,6 +42,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DataGrid
             VerticalAlignment="Top"
@@ -50,7 +51,7 @@
             Background="Transparent"
             IsReadOnly="True"
             Grid.Column="0" Grid.Row="0"
-            Grid.ColumnSpan="7"
+            Grid.ColumnSpan="10"
             Grid.RowSpan="12"
             Margin="0 0 0 10"
             >
@@ -119,7 +120,7 @@
             Обновить статьи
         </Button>
 
-        <DockPanel Grid.Column="8" Grid.Row="0"
+        <DockPanel Grid.Column="9" Grid.Row="0"
                    HorizontalAlignment="Right"
             Grid.ColumnSpan="5" Grid.RowSpan="14">
             <Grid>

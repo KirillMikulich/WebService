@@ -32,7 +32,7 @@ namespace WpfApp.ViewModel
         public async Task LoadPagesClick()
         {
             Pages = new ObservableCollection<Page>(await TableModel.GettAllPagesAsync());
-            System.Windows.MessageBox.Show("Load");
+            //System.Windows.MessageBox.Show("Load");
             if (Pages != null)
                 OnPropertyChanged("Pages");
         }

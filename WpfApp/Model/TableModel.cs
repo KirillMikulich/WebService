@@ -20,7 +20,7 @@ namespace WpfApp.Model
 
         public static async void UpdateArticlesAsync()
         {
-            await ClientManager.Client?.SendAsync(new SiteCrawl());
+            await ClientManager.Client?.SendAsync(new SiteCrawl() { BaseUrl = "https://belaruspartisan.by/" });
         }
     }
 }
