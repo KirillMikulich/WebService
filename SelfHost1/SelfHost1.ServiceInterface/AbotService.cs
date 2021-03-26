@@ -28,12 +28,15 @@ namespace SelfHost1.ServiceInterface
     {
         public string BaseUrl { get; set; }
         private List<Page> pages {get;set;}
-        List<Entityes> et { get; set; }
+        //List<Entityes> et { get; set; }
         public  void Any(SiteCrawlModel request)
         {
             BaseUrl = request.BaseUrl;
-            et = new List<Entityes>();
-            
+            //et = new List<Entityes>();
+            ProcessorService.Initialize(MorphLang.RU | MorphLang.EN | MorphLang.BY);
+            Pullenti.Ner.Org.OrganizationAnalyzer.Initialize();
+            Pullenti.Ner.Person.PersonAnalyzer.Initialize();
+            Pullenti.Ner.Geo.GeoAnalyzer.Initialize();
             StartSiteCrawl();
         }
 
@@ -50,9 +53,9 @@ namespace SelfHost1.ServiceInterface
             DemoSimpleCrawler();
             Db.InsertAll(pages);
             Log.Information("End download pages!");
-            Log.Information("Start Pullenti Analize");
-            PullentiAnalize();
-            Log.Information("End Pullenti Analize");
+            //Log.Information("Start Pullenti Analize");
+            //PullentiAnalize();
+            //Log.Information("End Pullenti Analize");
         }
 
         private  void DemoSimpleCrawler()
@@ -110,45 +113,57 @@ namespace SelfHost1.ServiceInterface
 
                 if (title != null && html != null && string_text != null && date != null)
                 {
-                    pages.Add(new Page
+                    var Id = Db.Insert(new Page
                     {
                         Title = title,
                         Url = Url,
                         Html = html,
                         Date = DateTime.Now, // DateTime.Parse(date),
                         Text = string_text
-                    });
-                    
-                }
-            }
-        }
+                    }, selectIdentity: true);
 
-        private async void PullentiAnalize()
-        {
-            ProcessorService.Initialize(MorphLang.RU | MorphLang.EN | MorphLang.BY);
-            Pullenti.Ner.Org.OrganizationAnalyzer.Initialize();
-            Pullenti.Ner.Person.PersonAnalyzer.Initialize();
-            Pullenti.Ner.Geo.GeoAnalyzer.Initialize();
-            List<Page> pg = Db.Select<Page>();
-            foreach (Page p in pg)
-            {
-
-                Log.Information("Page id = "+p.Id+" analize");
-                var proc = ProcessorService.CreateProcessor();
-                var ar = proc.Process(new SourceOfAnalysis(p.Text));
-
-
-                foreach (Referent entity in ar.Entities)
-                {
-                    et.Add(new Entityes
+                    List<Entityes>  et = new List<Entityes>();
+                    var proc = ProcessorService.CreateProcessor();
+                    var ar = proc.Process(new SourceOfAnalysis(string_text));
+                    foreach (Referent entity in ar.Entities)
                     {
-                        PagesId = p.Id,
-                        Type = entity.TypeName,
-                        Entity = entity.ToString().ToUpper()
-                    });
-                }
+                        Db.InsertAsync(new Entityes
+                        {
+                            PagesId = Id,
+                            Type = entity.TypeName,
+                            Entity = entity.ToString().ToUpper()
+                        });
+                    }
             }
-            Db.InsertAll(et);
+            }
         }
+
+        //private  void PullentiAnalize()
+        //{
+        //    ProcessorService.Initialize(MorphLang.RU | MorphLang.EN | MorphLang.BY);
+        //    Pullenti.Ner.Org.OrganizationAnalyzer.Initialize();
+        //    Pullenti.Ner.Person.PersonAnalyzer.Initialize();
+        //    Pullenti.Ner.Geo.GeoAnalyzer.Initialize();
+        //    List<Page> pg = Db.Select<Page>();
+        //    foreach (Page p in pg)
+        //    {
+
+        //        Log.Information("Page id = "+p.Id+" analize");
+        //        var proc = ProcessorService.CreateProcessor();
+        //        var ar = proc.Process(new SourceOfAnalysis(p.Text));
+
+
+        //        foreach (Referent entity in ar.Entities)
+        //        {
+        //            et.Add(new Entityes
+        //            {
+        //                PagesId = p.Id,
+        //                Type = entity.TypeName,
+        //                Entity = entity.ToString().ToUpper()
+        //            });
+        //        }
+        //    }
+        //    Db.InsertAll(et);
+        //}
     }
 }
