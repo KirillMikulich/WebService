@@ -41,6 +41,9 @@
     <Reference Include="NRobotsCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NRobotsCore.1.1.3\lib\net451\NRobotsCore.dll</HintPath>
     </Reference>
+    <Reference Include="Pullenti.Net">
+      <HintPath>..\..\Pullenti.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
@@ -85,12 +88,12 @@
     </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />

@@ -136,3 +136,5 @@ C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\Debug\Serilog.xml
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\Debug\Serilog.Enrichers.Thread.xml
 C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\Debug\Serilog.Sinks.Console.xml
+C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\Debug\Pullenti.Net.dll
+C:\Users\Kirill\source\repos\SelfHost1\SelfHost1\SelfHost1.ServiceInterface\bin\Debug\System.Text.Encoding.CodePages.xml

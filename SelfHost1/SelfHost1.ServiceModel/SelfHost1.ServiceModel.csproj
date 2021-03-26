@@ -69,8 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PageImplementation.cs" />
-    <Compile Include="SiteCrawl.cs" />
+    <Compile Include="PageModel.cs" />
+    <Compile Include="SiteCrawlModel.cs" />
+    <Compile Include="Types\Entity.cs" />
     <Compile Include="Types\Page.cs" />
   </ItemGroup>
   <ItemGroup />

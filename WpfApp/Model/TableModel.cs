@@ -20,7 +20,7 @@ namespace WpfApp.Model
 
         public static async void UpdateArticlesAsync()
         {
-            await ClientManager.Client?.SendAsync(new SiteCrawl() { BaseUrl = "https://belaruspartisan.by/" });
+            await ClientManager.Client?.SendAsync(new SiteCrawlModel() { BaseUrl = "https://belaruspartisan.by/" });
         }
 
         public static async void DeleteArticlesAsyncById(int id)

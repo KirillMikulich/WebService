@@ -2,6 +2,8 @@
 using Abot2.Core;
 using Abot2.Crawler;
 using Abot2.Poco;
+using Pullenti.Morph;
+using Pullenti.Ner;
 using SelfHost1.ServiceModel;
 using SelfHost1.ServiceModel.Types;
 using Serilog;
@@ -12,17 +14,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SelfHost1.ServiceInterface
 {
+    /*
+    Pullenti.Ner.Org	NER: организации
+    Pullenti.Ner.Person	NER: персона и атрибуты персон
+    Pullenti.Ner.Geo	NER: географические объекты
+     */
     public class AbotService : Service
     {
         public string BaseUrl { get; set; }
         private List<Page> pages {get;set;}
-        public  void Any(SiteCrawl request)
+        List<Entityes> et { get; set; }
+        public  void Any(SiteCrawlModel request)
         {
             BaseUrl = request.BaseUrl;
+            et = new List<Entityes>();
+            
             StartSiteCrawl();
         }
 
@@ -35,11 +46,13 @@ namespace SelfHost1.ServiceInterface
                .CreateLogger();
 
             pages = new List<Page>();
-            Log.Information("Start download pages.");
-
+            Log.Information("Start download pages!");
             DemoSimpleCrawler();
             Db.InsertAll(pages);
             Log.Information("End download pages!");
+            Log.Information("Start Pullenti Analize");
+            PullentiAnalize();
+            Log.Information("End Pullenti Analize");
         }
 
         private  void DemoSimpleCrawler()
@@ -68,7 +81,6 @@ namespace SelfHost1.ServiceInterface
                 
             }
         }
-
         private void DemoSinglePageRequest(string Url)
         {
             var pageRequester = new PageRequester(new CrawlConfiguration(), new WebContentExtractor());
@@ -98,7 +110,7 @@ namespace SelfHost1.ServiceInterface
 
                 if (title != null && html != null && string_text != null && date != null)
                 {
-                    pages.Add( new Page
+                    pages.Add(new Page
                     {
                         Title = title,
                         Url = Url,
@@ -109,6 +121,34 @@ namespace SelfHost1.ServiceInterface
                     
                 }
             }
+        }
+
+        private async void PullentiAnalize()
+        {
+            ProcessorService.Initialize(MorphLang.RU | MorphLang.EN | MorphLang.BY);
+            Pullenti.Ner.Org.OrganizationAnalyzer.Initialize();
+            Pullenti.Ner.Person.PersonAnalyzer.Initialize();
+            Pullenti.Ner.Geo.GeoAnalyzer.Initialize();
+            List<Page> pg = Db.Select<Page>();
+            foreach (Page p in pg)
+            {
+
+                Log.Information("Page id = "+p.Id+" analize");
+                var proc = ProcessorService.CreateProcessor();
+                var ar = proc.Process(new SourceOfAnalysis(p.Text));
+
+
+                foreach (Referent entity in ar.Entities)
+                {
+                    et.Add(new Entityes
+                    {
+                        PagesId = p.Id,
+                        Type = entity.TypeName,
+                        Entity = entity.ToString().ToUpper()
+                    });
+                }
+            }
+            Db.InsertAll(et);
         }
     }
 }
