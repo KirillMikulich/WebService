@@ -73,11 +73,14 @@ namespace SelfHost1.ServiceInterface
 
         public SearchEntityResponse Any(SearchEntity request)
         {
+            var q = Db.From<Page>()
+                .LeftJoin<Entityes>((x, y) => x.Id == y.PagesId)
+                .Where<Entityes>(y => y.Entity.Contains(request.Word.ToUpper()))
+                .GroupBy<Page>(y=> y.Id);
+
             return new SearchEntityResponse
             {
-                Result = Db.Select(Db.From<Page>()
-                .LeftJoin<Entityes>((x,y) => x.Id == y.PagesId)
-                .Where<Entityes>(x => x.Entity.Contains(request.Word.ToUpper())))
+                Result = Db.Select(q)
             };
         }
     }

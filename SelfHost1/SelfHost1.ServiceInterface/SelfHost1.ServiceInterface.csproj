@@ -103,9 +103,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abot.cs" />
     <Compile Include="AbotService.cs" />
     <Compile Include="DbPageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pullenti.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

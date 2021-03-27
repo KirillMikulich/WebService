@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WpfApp.Model;
 using WpfApp.View;
@@ -75,7 +76,7 @@ namespace WpfApp.ViewModel
         {
             if (SearchEntityes.Length > 0)
             {
-                Pages = new ObservableCollection<Page>(await TableModel.SearchEntityAsync(SearchWord));
+                Pages = new ObservableCollection<Page>(await TableModel.SearchEntityAsync(SearchEntityes));
                 OnPropertyChanged("Pages");
             }
         }
