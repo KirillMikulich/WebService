@@ -27,5 +27,16 @@ namespace WpfApp.Model
         {
             await ClientManager.Client?.SendAsync(new DeletePage() { Id = id});
         }
+
+        public static async Task<List<Page>> SearchWordAsync(string word)
+        {
+
+            return (await ClientManager.Client?.SendAsync(new SearchPages() { Word = word })).Result;
+        }
+        public static async Task<List<Page>> SearchEntityAsync(string word)
+        {
+
+            return (await ClientManager.Client?.SendAsync(new SearchEntity() { Word = word })).Result;
+        }
     }
 }

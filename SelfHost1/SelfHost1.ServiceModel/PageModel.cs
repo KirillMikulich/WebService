@@ -53,4 +53,8 @@ namespace SelfHost1.ServiceModel
     {
         public List<Page> Result { get; set; }
     }
+
+    public class SearchPages: IReturn<GetPagesResponse> { 
+        public string Word { get; set; }
+    }
 }

@@ -20,7 +20,37 @@ namespace WpfApp.ViewModel
         public ICommand DeleteCommand { get; set; }
         public ICommand ShowMoreCommand { get; set; }
         public Page SelectedItem { get; set; }
-       
+
+        private string _searchWord { get; set; }
+        public string SearchWord { get {
+                return _searchWord;
+            } set {
+                if(_searchWord != value)
+                {
+                    _searchWord = value;
+                    OnPropertyChanged("SearchWord");
+                }
+            } }
+        public ICommand SearchWordCommand { get; set; }
+
+        private string _searchEntityes { get; set; }
+        public string SearchEntityes
+        {
+            get
+            {
+                return _searchEntityes;
+            }
+            
+            set
+            {
+                if (_searchEntityes != value)
+                {
+                    _searchEntityes = value;
+                    OnPropertyChanged("SearchEntityes");
+                }
+            }
+        }
+        public ICommand SearchEntityesCommand { get; set; }
 
         public MainWindowVewModel()
         {
@@ -28,15 +58,34 @@ namespace WpfApp.ViewModel
             UpdateArticles = new RelayCommand(o => UpdateArticlesClick());
             DeleteCommand = new RelayCommand(o => DeleteCommandClick());
             ShowMoreCommand = new RelayCommand(o => ShowMoreCommandClick());
+            SearchWordCommand = new RelayCommand(o => Task.Run(SearchWordClick));
+            SearchEntityesCommand = new RelayCommand(o => Task.Run(SearchEntityClick));
         } 
+
+        public async Task SearchWordClick()
+        {
+            if(SearchWord.Length > 0)
+            {
+                Pages = new ObservableCollection<Page>(await TableModel.SearchWordAsync(SearchWord));
+                OnPropertyChanged("Pages");
+            }
+        }
+
+        public async Task SearchEntityClick()
+        {
+            if (SearchEntityes.Length > 0)
+            {
+                Pages = new ObservableCollection<Page>(await TableModel.SearchEntityAsync(SearchWord));
+                OnPropertyChanged("Pages");
+            }
+        }
 
         public void ShowMoreCommandClick()
         {
             if (SelectedItem != null)
             {
                 new ShowMoreView(SelectedItem).ShowDialog();
-                Pages = null; OnPropertyChanged("Pages");
-                Task.Run(LoadPagesClick);
+                
             }
         }
 

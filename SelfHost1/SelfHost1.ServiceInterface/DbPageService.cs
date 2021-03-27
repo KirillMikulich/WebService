@@ -65,5 +65,20 @@ namespace SelfHost1.ServiceInterface
             Db.DeleteById<Page>(request.Id);
         }
 
+        public GetPagesResponse Any(SearchPages request)
+        {
+            return new GetPagesResponse { Result = Db.Select<Page>(x => 
+            x.Text.Contains(request.Word) || x.Title.Contains(request.Word))};
+        }
+
+        public SearchEntityResponse Any(SearchEntity request)
+        {
+            return new SearchEntityResponse
+            {
+                Result = Db.Select(Db.From<Page>()
+                .LeftJoin<Entityes>((x,y) => x.Id == y.PagesId)
+                .Where<Entityes>(x => x.Entity.Contains(request.Word.ToUpper())))
+            };
+        }
     }
 }

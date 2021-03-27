@@ -147,12 +147,14 @@
                        Grid.Column="0">Поиск по словам</Label>
                 <TextBox Height="30px" 
                          Grid.Row="1"
+                         Text="{Binding SearchWord}"
                          Grid.ColumnSpan="4"
                          Grid.Column="0"
                          Margin="0 0 0 0"
                          ></TextBox>
                 <Button
                      Grid.Row="2"
+                    Command="{Binding SearchWordCommand}"
                          Grid.ColumnSpan="2"
                          Grid.Column="0"
                          Margin="0 0 0 0"
@@ -168,10 +170,12 @@
                          Grid.Row="5"
                          Grid.ColumnSpan="4"
                          Grid.Column="0"
+                         Text="{Binding SearchEntityes}"
                          Margin="0 0 0 0"
                          ></TextBox>
                 <Button
                      Grid.Row="6"
+                    Command="{Binding SearchEntityesCommand}"
                          Grid.ColumnSpan="2"
                          Grid.Column="0"
                          Margin=" 0 5 0 0 "
