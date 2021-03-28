@@ -35,6 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -47,14 +49,13 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AsyncCommand.cs" />
     <Compile Include="View\PreloaderView.xaml.cs">
       <DependentUpon>PreloaderView.xaml</DependentUpon>
     </Compile>
@@ -115,9 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ModernWpfUI">
-      <Version>0.9.3</Version>
-    </PackageReference>
     <PackageReference Include="ServiceStack.Client">
       <Version>5.10.4</Version>
     </PackageReference>

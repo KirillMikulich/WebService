@@ -70,10 +70,6 @@
       "frameworks": {
         "net472": {
           "dependencies": {
-            "ModernWpfUI": {
-              "target": "Package",
-              "version": "[0.9.3, )"
-            },
             "ServiceStack.Client": {
               "target": "Package",
               "version": "[5.10.4, )"

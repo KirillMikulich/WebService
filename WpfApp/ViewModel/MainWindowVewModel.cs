@@ -52,23 +52,17 @@ namespace WpfApp.ViewModel
                 }
             }
         }
-        
         public ICommand SearchEntityesCommand { get; set; }
 
         public MainWindowVewModel()
         {
+
+            BackgroundWorker worker = new BackgroundWorker();
             
-            ButtonLoadTable = new RelayCommand(o => {
-                var preloader = new PreloaderView();
-                preloader.Show();
-                Task.Run(LoadPagesClick).Wait();
-                preloader.Close();
-            });
+            ButtonLoadTable = new AsyncCommand(LoadPagesClick);
             UpdateArticles = new RelayCommand(o => {
-                PreloaderView preloader = new PreloaderView();
-                preloader.Show();
+               
                 UpdateArticlesClick();
-                preloader.Close();
             });
             DeleteCommand = new RelayCommand(o => {
                 DeleteCommandClick();
@@ -77,27 +71,19 @@ namespace WpfApp.ViewModel
             {
                 ShowMoreCommandClick();
             });
-            SearchWordCommand = new RelayCommand(o => {
-                PreloaderView preloader = new PreloaderView();
-                preloader.Show();
-                Task.Run(SearchWordClick).Wait();
-                preloader.Close();
-            });
-            SearchEntityesCommand = new RelayCommand(o =>
-            {
-                PreloaderView preloader = new PreloaderView();
-                preloader.Show();
-                Task.Run(SearchEntityClick).Wait();
-                preloader.Close();
-            });
+            SearchWordCommand = new AsyncCommand(SearchWordClick);
+            SearchEntityesCommand = new AsyncCommand(SearchEntityClick);
         } 
 
         public async Task SearchWordClick()
         {
             if(SearchWord.Length > 0)
             {
-                
+                var preloader = new PreloaderView();
+                preloader.Show();
                 Pages = new ObservableCollection<Page>(await TableModel.SearchWordAsync(SearchWord));
+                
+                preloader.Close();
                 OnPropertyChanged("Pages");
             }
         }
@@ -106,8 +92,11 @@ namespace WpfApp.ViewModel
         {
             if (SearchEntityes.Length > 0)
             {
-                
+                var preloader = new PreloaderView();
+                preloader.Show();
                 Pages = new ObservableCollection<Page>(await TableModel.SearchEntityAsync(SearchEntityes));
+                
+                preloader.Close();
                 OnPropertyChanged("Pages");
             }
         }
@@ -127,8 +116,8 @@ namespace WpfApp.ViewModel
             {
                 
                 TableModel.DeleteArticlesAsyncById(SelectedItem.Id);
-                Pages = null; OnPropertyChanged("Pages");
-                Task.Run(LoadPagesClick);
+                Pages.Remove(SelectedItem);
+                OnPropertyChanged("Pages");
             }
         }
 
@@ -139,9 +128,10 @@ namespace WpfApp.ViewModel
         
         public async Task LoadPagesClick()
         {
-            
+            var preloader = new PreloaderView();
+            preloader.Show();
             Pages = new ObservableCollection<Page>(await TableModel.GettAllPagesAsync());
-            
+            preloader.Close();
             //System.Windows.MessageBox.Show("Load");
             if (Pages != null)
                 OnPropertyChanged("Pages");

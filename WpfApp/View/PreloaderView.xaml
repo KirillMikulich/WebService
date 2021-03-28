@@ -7,16 +7,16 @@
         WindowStyle="None"
        
         WindowStartupLocation="CenterScreen"
-        Height="120" Width="450">
+        Height="70" Width="220">
     <Grid>
         <Label
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
-            Margin="0 15 0 0 "
-            FontSize="15px"
-            >Обработак запроса</Label>
-        <ProgressBar  Height="40px"
-                      Width="400px"
+            Margin="0 5 0 0 "
+            FontSize="10px"
+            >Обработка запроса</Label>
+        <ProgressBar  Height="20px"
+                      Width="200px"
                       VerticalAlignment="Bottom"
                       Margin="0 0 0 10"
                       Minimum="0" Maximum="100" 

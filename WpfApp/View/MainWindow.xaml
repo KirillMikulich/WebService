@@ -59,17 +59,17 @@
             <DataGrid.Columns>
                 
                 <DataGridTextColumn Binding="{Binding Path=Url}" 
-                                    Header="URL" />
+                                    Header="Ссылка" />
                 <DataGridTextColumn Binding="{Binding Path=Title}" 
-                                    Header="Title"  />
+                                    Header="Заголовок"  />
                 <DataGridTextColumn Binding="{Binding Path=Date, 
                                                 StringFormat=\{0:dd.MM.yy\}}" 
-                                    Header="Date"   />
+                                    Header="Дата"   />
 
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete" 
+                            <Button Content="Удалить" 
                                     Padding="5px"
                                     Command="{Binding Path=DataContext.DeleteCommand,
                                     RelativeSource={RelativeSource 
@@ -82,7 +82,7 @@
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Show more" 
+                            <Button Content="Больше" 
                                     Padding="5px"  
                                     Command="{Binding Path=DataContext.ShowMoreCommand,
                                     RelativeSource={RelativeSource 
