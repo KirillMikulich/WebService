@@ -68,3 +68,5 @@ C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\ServiceStack.Common.xml
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\ShowMoreView.g.cs
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\ShowMoreView.baml
 C:\Users\Kirill\source\repos\SelfHost1\WpfApp\bin\Debug\Pullenti.Net.dll
+C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\PreloaderView.g.cs
+C:\Users\Kirill\source\repos\SelfHost1\WpfApp\obj\Debug\View\PreloaderView.baml

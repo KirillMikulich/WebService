@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\PreloaderView.xaml.cs">
+      <DependentUpon>PreloaderView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ShowMoreView.xaml.cs">
       <DependentUpon>ShowMoreView.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PreloaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ShowMoreView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
