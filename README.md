@@ -1,2 +1,8 @@
 # WebService
--ServiceStack
+- ServiceStack
+- ServiceStack.ORMLite
+- WPF
+- MVVM
+- Pullenti
+- Abot
+- Postgresql
